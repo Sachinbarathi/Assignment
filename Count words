@@ -1,0 +1,14 @@
+public class Main {
+    public static void main(String[] args) {
+        String str = "  Java   is   fun  ";
+
+        str = str.trim();
+
+        if (str.isEmpty()) {
+            System.out.println("Word Count = 0");
+        } else {
+            String[] words = str.split("\\s+");
+            System.out.println("Word Count = " + words.length);
+        }
+    }
+}
