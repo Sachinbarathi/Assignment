@@ -1,0 +1,51 @@
+class Main {
+
+    static class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+            this.next = null;
+        }
+    }
+
+    static Node head;
+
+    // Delete the first node
+    static void deleteFront() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+
+        head = head.next;
+    }
+
+    // Display / Traversal
+    static void display() {
+        Node temp = head;
+
+        while (temp != null) {
+            System.out.print(temp.data + " ");
+            temp = temp.next;
+        }
+    }
+
+    public static void main(String[] args) {
+
+        // Creating linked list
+        head = new Node(10);
+        head.next = new Node(20);
+        head.next.next = new Node(30);
+        head.next.next.next = new Node(40);
+
+        System.out.println("Before Deletion:");
+        display();
+
+        deleteFront();
+
+        System.out.println("\nAfter Deleting Head:");
+        display();
+    }
+}
